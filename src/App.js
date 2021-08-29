@@ -1,10 +1,25 @@
+import { useState, useEffect } from 'react'
 import './App.css'
+import { AppContainer } from './App.styles'
+import Home from './sections/Home/Home'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 function App() {
+	const [darkMode, setdarkMode] = useState(true)
+	useEffect(() => {
+		AOS.init({
+			duration: 1000,
+		})
+	}, [])
+
 	return (
-		<div className='App'>
-			<header className='App-header'>Hello world</header>
-		</div>
+		<AppContainer darkMode={darkMode}>
+			<Home
+				darkMode={darkMode}
+				setDarkMode={(flag) => setdarkMode(flag)}
+			/>
+		</AppContainer>
 	)
 }
 

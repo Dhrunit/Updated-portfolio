@@ -1,0 +1,25 @@
+@font-face {
+	/* font weight 400 */
+	font-family: ObjectSansRegular;
+	src: url('./assets/fonts/ObjectSans-Regular.otf');
+}
+
+@font-face {
+	/* font weight 500 */
+	font-family: ObjectSansBold;
+	src: url('./assets/fonts/ObjectSans-Heavy.otf');
+}
+
+:root {
+	--color-primary: #ffc947;
+	--color-secondary: #185adb;
+	--color-dark-blue: #0a1931;
+	--color-white: #fff;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: ObjectSansRegular;
+}

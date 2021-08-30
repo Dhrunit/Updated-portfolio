@@ -21,24 +21,26 @@ export default function Navbar(props) {
 							alignItems: 'center',
 							display: 'inline-flex',
 						}}>
-						<Typoh1 white>Dhrunit</Typoh1>
+						<Typoh1 darkMode={props.darkMode} white>
+							Dhrunit
+						</Typoh1>
 						<Typoh1 secondary>Prajapati</Typoh1>
 						<StyledBrandImg src={NavBrandSvg} />
 					</div>
 					<div style={{ display: 'inline-flex' }}>
-						<NavBtn href='#home'>
+						<NavBtn href='#home' darkMode={props.darkMode}>
 							<p>Home</p>
 						</NavBtn>
-						<NavBtn href='#about'>
+						<NavBtn href='#about' darkMode={props.darkMode}>
 							<p>About</p>
 						</NavBtn>
-						<NavBtn href='#skills'>
+						<NavBtn href='#skills' darkMode={props.darkMode}>
 							<p>Skills</p>
 						</NavBtn>
-						<NavBtn href='#work'>
+						<NavBtn href='#work' darkMode={props.darkMode}>
 							<p>Work</p>
 						</NavBtn>
-						<NavBtn href='#contact'>
+						<NavBtn href='#contact' darkMode={props.darkMode}>
 							<p>Contact</p>
 						</NavBtn>
 					</div>
@@ -65,12 +67,15 @@ export default function Navbar(props) {
 							alignItems: 'center',
 							display: 'inline-flex',
 						}}>
-						<Typoh1 white>Dhrunit</Typoh1>
+						<Typoh1 darkMode={props.darkMode} white>
+							Dhrunit
+						</Typoh1>
 						<Typoh1 secondary>Prajapati</Typoh1>
 						<StyledBrandImg src={NavBrandSvg} />
 					</div>
 					<MenuIcon
-						style={{ color: '#fff', height: '45px', width: '45px' }}
+						className='MenuIcon'
+						style={{ color: '#fff', height: '35px', width: '35px' }}
 					/>
 				</div>
 			</Hidden>

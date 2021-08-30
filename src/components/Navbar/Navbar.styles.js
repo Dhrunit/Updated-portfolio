@@ -3,11 +3,18 @@ import Switch from '@material-ui/core/Switch'
 export const StyledBrandImg = styled.img`
 	width: 80px;
 	margin-left: -10px;
+	@media (max-width: 1050px) {
+		width: 60px;
+	}
 `
 export const NavContainer = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: space-evenly;
+	margin-top: 0.5rem;
+	@media (max-width: 1050px) {
+		font-size: 12px;
+	}
 `
 
 export const Typoh1 = styled.h1`
@@ -16,13 +23,28 @@ export const Typoh1 = styled.h1`
 			return 'var(--color-primary)'
 		} else if (props.secondary) {
 			return 'var(--color-secondary)'
-		} else {
+		} else if (props.darkMode && props.white) {
 			return 'var(--color-white)'
+		} else {
+			return '#000'
 		}
 	}};
 	font-family: ObjectSansBold;
 	margin-right: 0.5rem;
 	font-size: 28px;
+	@media (max-width: 1050px) {
+		font-size: 20px;
+	}
+	@media (max-width: 960px) {
+		font-size: 25px;
+	}
+	@media (max-width: 450px) {
+		width: 80%;
+		font-size: 22px;
+	}
+	@media (max-width: 360px) {
+		font-size: 18px;
+	}
 `
 export const Typoh2 = styled.h2`
 	color: ${(props) => {
@@ -37,12 +59,16 @@ export const Typoh2 = styled.h2`
 `
 export const GeneralTypo = styled.span`
 	color: ${(props) => {
-		if (props.primary) {
+		if (props.primary && props.darkMode) {
 			return 'var(--color-primary)'
-		} else if (props.secondary) {
+		} else if (props.secondary && props.darkMode) {
 			return 'var(--color-secondary)'
-		} else {
+		} else if (props.white && props.darkMode) {
 			return 'var(--color-white)'
+		} else if (!props.darkMode && props.primary) {
+			return 'var(--color-primary)'
+		} else if (!props.darkMode && props.secondary) {
+			return 'var(--color-secondary)'
 		}
 	}};
 	font-family: ${(props) => {
@@ -55,9 +81,14 @@ export const GeneralTypo = styled.span`
 `
 export const Typoh4 = styled.h4``
 export const NavBtn = styled.a`
-	/* background: var(--color-secondary); */
 	p {
-		color: var(--color-white);
+		color: ${(props) => {
+			if (!props.darkMode) {
+				return '#000'
+			} else {
+				return 'var(--color-white)'
+			}
+		}};
 	}
 	:hover {
 		background: var(--color-secondary);
@@ -78,15 +109,36 @@ export const IOSSwitch = styled(Switch)`
 		border-radius: 28px;
 		height: 28px;
 		margin-left: 1rem;
+		@media (max-width: 1050px) {
+			height: 20px;
+			width: 40px;
+		}
 		span.MuiSwitch-switchBase.Mui-checked {
 			transform: translateX(30px);
 			padding: 4px;
+			@media (max-width: 1050px) {
+				transform: translateX(15px);
+				padding: 1px;
+			}
 		}
 		span.MuiSwitch-colorSecondary.Mui-checked {
 			color: var(--color-white);
+			@media (max-width: 1050px) {
+				transform: translateX(18px);
+				padding: 2.5px;
+			}
+		}
+		span.MuiSwitch-thumb {
+			@media (max-width: 1050px) {
+				width: 15px;
+				height: 15px;
+			}
 		}
 		span.MuiSwitch-switchBase {
 			padding: 4px;
+			@media (max-width: 1050px) {
+				padding: 2.5px;
+			}
 		}
 		span.MuiSwitch-track {
 			background: var(--color-primary);

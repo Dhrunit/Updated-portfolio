@@ -1,10 +1,10 @@
-import { Container, Grid } from '@material-ui/core'
+import { Container, Grid, useMediaQuery } from '@material-ui/core'
 import React from 'react'
 import Navbar from '../../components/Navbar/Navbar'
 import './Home.styles.js'
 import MailOutlineIcon from '@material-ui/icons/MailOutline'
 import AttachFileIcon from '@material-ui/icons/AttachFile'
-import HomeSvg from '../../assets/svgs/Homesvg.svg'
+import HomeSvg from '../../assets/svgs/Homesvg-svg.svg'
 import {
 	ActionButtons,
 	AnimateHome,
@@ -14,6 +14,7 @@ import {
 } from './Home.styles.js'
 import { GeneralTypo } from '../../components/Navbar/Navbar.styles'
 export default function Home(props) {
+	const isMobile = useMediaQuery('(max-width:400px)')
 	const { darkMode, setDarkMode } = props
 	return (
 		<Container maxWidth='lg' style={{ padding: '0 3rem' }}>
@@ -23,27 +24,29 @@ export default function Home(props) {
 			/>
 			<Grid container justifyContent='center' data-aos='fade-left'>
 				<Title>
-					<GeneralTypo white>Hi there 👋, I am a</GeneralTypo>
-					<GeneralTypo primary bold>
+					<GeneralTypo white darkMode={props.darkMode}>
+						Hi there 👋, I am a
+					</GeneralTypo>
+					<GeneralTypo primary bold darkMode={props.darkMode}>
 						&nbsp;Full Stack
 					</GeneralTypo>
-					<GeneralTypo secondary bold>
+					<GeneralTypo secondary bold darkMode={props.darkMode}>
 						&nbsp;Software Developer
 					</GeneralTypo>
 				</Title>
-				<Subtitle>
-					having an experience of building Web applications with MERN
+				<Subtitle darkMode={props.darkMode}>
+					having experience of building Web applications with MERN
 					Stack and some other cool libraries and frameworks.
 				</Subtitle>
 			</Grid>
-			<Grid container justifyContent='center'>
+			<Grid className='btn_container' container justifyContent='center'>
 				<ActionButtons href='#'>
 					<AttachFileIcon />
-					<p>My Resume</p>
+					<p>{isMobile ? 'Resume' : 'My Resume'}</p>
 				</ActionButtons>
 				<ActionButtons href='#contact'>
 					<MailOutlineIcon />
-					<p>Contact me</p>
+					<p>{isMobile ? 'Contact' : 'Contact me'}</p>
 				</ActionButtons>
 			</Grid>
 			<Grid>

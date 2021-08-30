@@ -42,7 +42,7 @@ export const Title = styled.div`
 	width: 100%;
 	text-align: center;
 	font-size: 26px;
-	margin: 2rem 1rem 1rem 1rem;
+	margin: 2rem 1rem 1rem 0;
 	@media (max-width: 960px) {
 		font-size: 20px;
 	}

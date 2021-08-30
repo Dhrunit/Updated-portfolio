@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const AppContainer = styled.body`
+export const AppContainer = styled.div`
 	background: ${(props) => {
 		if (props.darkMode) {
 			return `var(--color-dark-blue)`

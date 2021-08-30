@@ -75,7 +75,11 @@ export default function Navbar(props) {
 					</div>
 					<MenuIcon
 						className='MenuIcon'
-						style={{ color: '#fff', height: '35px', width: '35px' }}
+						style={{
+							color: props.darkMode ? '#fff' : '#000',
+							height: '35px',
+							width: '35px',
+						}}
 					/>
 				</div>
 			</Hidden>

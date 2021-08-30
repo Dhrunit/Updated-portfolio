@@ -1,17 +1,11 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import './App.css'
 import { AppContainer } from './App.styles'
 import Home from './sections/Home/Home'
-import AOS from 'aos'
-import 'aos/dist/aos.css'
+import About from './sections/About/About'
 
 function App() {
 	const [darkMode, setdarkMode] = useState(true)
-	useEffect(() => {
-		AOS.init({
-			duration: 1000,
-		})
-	}, [])
 
 	return (
 		<AppContainer darkMode={darkMode}>
@@ -19,6 +13,7 @@ function App() {
 				darkMode={darkMode}
 				setDarkMode={(flag) => setdarkMode(flag)}
 			/>
+			<About darkMode={darkMode} />
 		</AppContainer>
 	)
 }

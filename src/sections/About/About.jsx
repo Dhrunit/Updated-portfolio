@@ -52,7 +52,7 @@ export default function About(props) {
 										darkMode={props.darkMode}>
 										Full Stack web developer{' '}
 									</GeneralTypo>
-									living in Ahmedabad, Gujarat having 8 months
+									living in Ahmedabad, Gujarat having 1.5 years
 									of Web development experience in total.
 								</GeneralAbout>
 								<br />

@@ -63,7 +63,7 @@ export const ContactTitle = styled.p`
 
 export const TitleSection = styled.div`
     max-width:47%;
-    margin:0 2rem;
+    margin:0 3.5rem;
     @media (max-width: 950px) {
         margin:0 auto;
         margin-left: 2rem;

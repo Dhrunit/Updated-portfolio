@@ -13,6 +13,8 @@ import {
 } from './Navbar.styles.js'
 import { Hidden } from '@material-ui/core'
 import MenuIcon from '@material-ui/icons/Menu'
+import Drawer from '@material-ui/core/Drawer';
+import Collapse from '@material-ui/core/Collapse';
 
 export default function Navbar(props) {
 	const [openDrawer, setDrawer] = useState(false)
@@ -88,7 +90,7 @@ export default function Navbar(props) {
 						onClick={()=>setDrawer(!openDrawer)}
 					/>
 				</div>
-				<ResponsiveDrawer darkMode={props.darkMode} anchor={'right'} open={openDrawer} onClose={()=>setDrawer(false)}>
+				{/* <ResponsiveDrawer darkMode={props.darkMode} anchor={'right'} open={openDrawer} onClose={()=>setDrawer(false)}>
 					<div style={{textAlign:'center'}}>
 						<ResponsiveNavBtn href='#home' darkMode={props.darkMode}>
 							<p>Home</p>
@@ -115,7 +117,37 @@ export default function Navbar(props) {
 							/>
 						</div>
 					</div>
-				</ResponsiveDrawer>
+				</ResponsiveDrawer> */}
+				<Collapse in={openDrawer}>
+					<ResponsiveNavSection darkMode={props.darkMode}>
+						<>
+							<ResponsiveNavBtn href='#home' darkMode={props.darkMode}>
+								<p>Home</p>
+							</ResponsiveNavBtn>
+							<ResponsiveNavBtn href='#about' darkMode={props.darkMode}>
+								<p>About</p>
+							</ResponsiveNavBtn>
+							<ResponsiveNavBtn href='#skills' darkMode={props.darkMode}>
+								<p>Skills</p>
+							</ResponsiveNavBtn>
+							<ResponsiveNavBtn href='#work' darkMode={props.darkMode}>
+								<p>Work</p>
+							</ResponsiveNavBtn>
+							<ResponsiveNavBtn href='#contact' darkMode={props.darkMode}>
+								<p>Contact</p>
+							</ResponsiveNavBtn>
+							<div>
+								<IOSSwitch
+									checked={props.darkMode}
+									onChange={(evt) =>
+										props.setDarkMode(evt.target.checked)
+									}
+									name='checkedB'
+								/>
+							</div>
+						</>
+					</ResponsiveNavSection>
+				</Collapse>
 			</Hidden>
 		</>
 	)

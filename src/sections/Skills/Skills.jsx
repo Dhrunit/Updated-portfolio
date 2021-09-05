@@ -6,7 +6,7 @@ import SkillsSvg from '../../assets/svgs/SkillsSvg.svg'
 
 export default function Skills(props) {
     return (
-        <>
+        <div id="skills">
 			<Fade down>
                 <PageTitle darkMode={props.darkMode}>Skills</PageTitle>
             </Fade>
@@ -32,6 +32,6 @@ export default function Skills(props) {
 			<br />
 			<br />
 			<br />
-        </>
+        </div>
     )
 }

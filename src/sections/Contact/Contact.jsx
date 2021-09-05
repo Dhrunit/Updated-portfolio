@@ -8,7 +8,7 @@ import Fade from 'react-reveal/Fade'
 
 export default function Contact() {
     return (
-        <ContactSection>
+        <ContactSection id="contact">
             <Fade left>
                 <TitleSection>
                     <ContactTitle>I would love to help you with your project or maybe you just want to say Hi 👋 and have a quick chat? My inbox is open for all 😁</ContactTitle> 

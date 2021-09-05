@@ -8,7 +8,7 @@ import Work from './sections/Work/Work';
 import Contact from './sections/Contact/Contact.jsx';
 
 function App() {
-	const [darkMode, setdarkMode] = useState(true)
+	const [darkMode, setdarkMode] = useState(false)
 
 	return (
 		<AppContainer darkMode={darkMode}>

@@ -18,7 +18,7 @@ import { GeneralTypo } from '../../components/Navbar/Navbar.styles'
 
 export default function About(props) {
 	return (
-		<AboutContainer container>
+		<AboutContainer container id="about">
 			<Fade down>
 				<PageTitle darkMode={props.darkMode}>About Me</PageTitle>
 			</Fade>

@@ -71,3 +71,11 @@
 	color:#ffc947;
 	transform: scale(1.2);
 }
+
+.skills-box{
+	margin: 1rem !important;
+}
+
+a{
+	text-decoration: none;
+}

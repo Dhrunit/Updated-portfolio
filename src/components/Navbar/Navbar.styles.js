@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 import Switch from '@material-ui/core/Switch'
+import Drawer from '@material-ui/core/Drawer';
+
 export const StyledBrandImg = styled.img`
 	width: 80px;
 	margin-left: -10px;
@@ -103,6 +105,46 @@ export const NavBtn = styled.a`
 	border-radius: 50px;
 	margin: 0 1rem;
 `
+
+export const ResponsiveNavBtn = styled.a`
+	p {
+		color: ${(props) => {
+			if (!props.darkMode) {
+				return '#000'
+			} else {
+				return 'var(--color-white)'
+			}
+		}};
+		margin: 2rem;
+	}
+	cursor: pointer;
+`
+
+export const ResponsiveNavSection = styled.div`
+	background: ${(props) => {
+		if (props.darkMode) {
+			return 'var(--color-dark-blue)'
+		} else {
+			return 'var(--color-white)'
+		}
+	}};
+	width: 100%;
+	text-align: center;
+`
+
+export const ResponsiveDrawer = styled(Drawer)`
+	div.MuiDrawer-paper{
+		background-color: ${(props) => {
+			if (props.darkMode) {
+				return 'var(--color-dark-blue)'
+			} else {
+				return 'var(--color-white)'
+			}
+		}};
+		width: 40%;
+	}
+`
+
 export const IOSSwitch = styled(Switch)`
 	&.MuiSwitch-root {
 		padding: 0;

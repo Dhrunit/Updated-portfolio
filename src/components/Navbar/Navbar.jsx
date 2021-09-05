@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Navbar.styles.js'
 import NavBrandSvg from '../../assets/svgs/NavBrandSvg.svg'
 import {
 	IOSSwitch,
 	NavBtn,
 	NavContainer,
+	ResponsiveDrawer,
+	ResponsiveNavBtn,
+	ResponsiveNavSection,
 	StyledBrandImg,
 	Typoh1,
 } from './Navbar.styles.js'
@@ -12,6 +15,7 @@ import { Hidden } from '@material-ui/core'
 import MenuIcon from '@material-ui/icons/Menu'
 
 export default function Navbar(props) {
+	const [openDrawer, setDrawer] = useState(false)
 	return (
 		<>
 			<NavContainer>
@@ -79,9 +83,39 @@ export default function Navbar(props) {
 							color: props.darkMode ? '#fff' : '#000',
 							height: '35px',
 							width: '35px',
+							cursor: 'pointer'
 						}}
+						onClick={()=>setDrawer(!openDrawer)}
 					/>
 				</div>
+				<ResponsiveDrawer darkMode={props.darkMode} anchor={'right'} open={openDrawer} onClose={()=>setDrawer(false)}>
+					<div style={{textAlign:'center'}}>
+						<ResponsiveNavBtn href='#home' darkMode={props.darkMode}>
+							<p>Home</p>
+						</ResponsiveNavBtn>
+						<ResponsiveNavBtn href='#about' darkMode={props.darkMode}>
+							<p>About</p>
+						</ResponsiveNavBtn>
+						<ResponsiveNavBtn href='#skills' darkMode={props.darkMode}>
+							<p>Skills</p>
+						</ResponsiveNavBtn>
+						<ResponsiveNavBtn href='#work' darkMode={props.darkMode}>
+							<p>Work</p>
+						</ResponsiveNavBtn>
+						<ResponsiveNavBtn href='#contact' darkMode={props.darkMode}>
+							<p>Contact</p>
+						</ResponsiveNavBtn>
+						<div>
+							<IOSSwitch
+								checked={props.darkMode}
+								onChange={(evt) =>
+									props.setDarkMode(evt.target.checked)
+								}
+								name='checkedB'
+							/>
+						</div>
+					</div>
+				</ResponsiveDrawer>
 			</Hidden>
 		</>
 	)

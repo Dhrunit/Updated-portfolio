@@ -43,9 +43,31 @@
 		width: 30px;
 		height: 30px;
 	}
+	.border-primary{
+		width: 10px;
+	}
 }
 @media (max-width: 470px) {
 	.btn_container {
 		flex-wrap: nowrap !important;
 	}
+}
+
+.slick-prev {
+	left: 3% !important;
+	z-index: 1;
+  }
+.slick-next {
+	right: 3% !important;
+	z-index: 1;
+}
+.icon {
+	font-size: 3rem;
+	margin: 0 25px;
+	transition: all 0.2s;
+}
+
+.icon:hover{
+	color:#ffc947;
+	transform: scale(1.2);
 }

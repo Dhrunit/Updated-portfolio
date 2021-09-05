@@ -9,6 +9,7 @@ import Javascript from '../../assets/svgs/javascript.svg'
 import {
 	AboutContainer,
 	AboutSvgImg,
+	BorderPrimary,
 	GeneralAbout,
 	PageTitle,
 	ToolsImages,
@@ -142,12 +143,9 @@ export default function About(props) {
 									designing as well.
 								</GeneralAbout>
 							</div>
-							<div
-								style={{
-									border: '1px solid var(--color-primary)',
-									width: '90%',
-									margin: '1rem 2rem',
-								}}></div>
+							<BorderPrimary
+								className='border-primary'
+								></BorderPrimary>
 							<div
 								style={{
 									textAlign: 'center',
@@ -182,6 +180,11 @@ export default function About(props) {
 					</Fade>
 				</Grid>
 			</Grid>
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
 		</AboutContainer>
 	)
 }

@@ -49,3 +49,12 @@ export const ToolsImages = styled.img`
 		transform: scale(1.3);
 	}
 `
+
+export const BorderPrimary = styled.div`
+	border: 1px solid var(--color-primary);
+	width: 90%;
+	margin: 1rem 2rem;
+	@media (max-width: 500px) {
+		width: 85%;
+	}
+`

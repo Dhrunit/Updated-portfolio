@@ -46,7 +46,7 @@ export default function Home(props) {
 			</Grid>
 			<Grid className='btn_container' container justifyContent='center'>
 				<Fade up>
-					<ActionButtons href='#'>
+					<ActionButtons target='_blank' rel="noreferrer" href='https://drive.google.com/file/d/1pSggJDBapELUuR5QN-awFV0P92JLjWN4/view?usp=sharing'>
 						<AttachFileIcon />
 						<p>{isMobile ? 'Resume' : 'My Resume'}</p>
 					</ActionButtons>
